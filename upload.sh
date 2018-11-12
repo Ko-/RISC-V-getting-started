@@ -17,7 +17,7 @@ fi
 
 # Check dependencies.
 checkdep() {
-    path_to_dep = $(which "$1")
+    path_to_dep=$(which "$1")
     if [ ! -x "$1" ] && [ ! -x "$path_to_dep" ]; then
         echo "$1 does not seem to exist. Please set the right path in config.mk or add the directory to your \$PATH."
         exit 1
