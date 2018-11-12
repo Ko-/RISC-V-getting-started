@@ -13,7 +13,7 @@ $ patch -d <your riscv-gdb dir> -p1 --backup-if-mismatch < gdb.patch
 
 Before compilation, make sure to pass (at least) the following options to the `configure` script. Note that compilation will take a while.
 ```
-$ ./configure --enable-multilib --with-cmodel=medany --with-libgcc-cmodel --with-arch=rv32imac --with-abi=ilp32 --prefix=<your install dir>
+$ ./configure --enable-multilib --with-cmodel=medany --prefix=<your install dir>
 $ make -j newlib
 ```
 
