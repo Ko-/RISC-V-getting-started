@@ -11,10 +11,10 @@ If you are compiling the toolchain from source and if your Linux distribution us
 $ patch -d <your riscv-gdb dir> -p1 --backup-if-mismatch < gdb.patch
 ```
 
-Before compilation, make sure to pass (at least) the following options to the `configure` script. Note that compilation will take a while.
+Before compilation, make sure to pass (at least) the following options to the `configure` script. Note that compilation will take a while. You might want to consider parallellizing your build (e.g., `make -j4 newlib`).
 ```
 $ ./configure --enable-multilib --with-cmodel=medany --prefix=<your install dir>
-$ make -j newlib
+$ make newlib
 ```
 
 Next, we need [OpenOCD with RISC-V support](https://github.com/riscv/riscv-openocd) installed. This is used for flashing binaries to the board. There exists an [AUR package](https://aur.archlinux.org/packages/riscv-openocd/) for Arch users, but we are not aware of other packages.
