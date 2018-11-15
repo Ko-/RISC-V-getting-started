@@ -219,7 +219,10 @@ void _init()
 
   #ifndef NO_INIT
   use_default_clocks();
-  use_pll(0, 0, 1, 31, 1);
+  // Uncomment the following line to set the core frequency to 256 MHz.
+  //use_pll(0, 0, 1, 31, 1);
+  // If you choose to do so, the following line MUST be removed.
+  SPI0_REG(SPI_REG_SCKDIV) = 0;
   uart_init(115200);
 
   printf("core freq at %ld Hz\n", get_cpu_freq());
